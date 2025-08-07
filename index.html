@@ -1,222 +1,206 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AlienX Portfolio</title>
+    <title>Mechanical Engineer Portfolio | 3D Animations</title>
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Three.js (3D Animations) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <!-- GSAP (Advanced Animations) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <!-- Particle.js (Floating Elements) -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <!-- Typed.js (Typing Effect) -->
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <!-- Main CSS -->
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="cursor"></div>
-    
+    <!-- ===== Dark Mode Toggle ===== -->
+    <div class="theme-toggle">
+        <i class="fas fa-moon"></i>
+        <i class="fas fa-sun"></i>
+    </div>
+
+    <!-- ===== Floating 3D Gears (Three.js) ===== -->
+    <div id="gear-animation"></div>
+
+    <!-- ===== Particle.js Background ===== -->
+    <div id="particles-js"></div>
+
+    <!-- ===== Main Content ===== -->
     <header class="header">
-        <a href="#" class="logo">Alien<span>X</span></a>
-        
+        <a href="#" class="logo">ENG<span>X</span></a>
+        <nav class="navbar">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#education">Education</a>
+            <a href="#certifications">Certifications</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
         <div class="menu-toggle">
             <div class="bar"></div>
             <div class="bar"></div>
             <div class="bar"></div>
         </div>
-        
-        <nav class="navbar">
-            <a href="#home" class="active">Home</a>
-            <a href="#about">About</a>
-            <a href="#services">Services</a>
-            <a href="#portfolio">Portfolio</a>
-            <a href="#contact">Contact</a>
-        </nav>
     </header>
 
     <section class="home" id="home">
         <div class="home-content">
-            <h3>Greetings, Earthling</h3>
-            <h1>I'm <span class="alien-name">AlienX</span></h1>
+            <h3>Hello, I'm</h3>
+            <h1><span class="mech-name">Alex Carter</span></h1>
             <h3>And I'm a <span class="multiple-text"></span></h3>
-            <p>Intergalactic designer and developer bringing cosmic creativity to your digital experiences.</p>
+            <p>Mechanical Engineer specializing in robotics, thermodynamics, and industrial automation.</p>
             <div class="social-media">
-                <a href="#"><i class="fab fa-github"></i></a>
-                <a href="#"><i class="fab fa-codepen"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
                 <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-xing"></i></a>
+                <a href="#"><i class="fas fa-file-pdf"></i></a>
             </div>
-            <a href="#" class="btn">Download CV</a>
+            <a href="#" class="btn">Download Resume (3D)</a>
         </div>
-
         <div class="home-img">
-            <div class="alien-head">
-                <div class="antenna">
-                    <div class="antenna-ball"></div>
-                </div>
-                <div class="alien-face">
-                    <div class="eyes">
-                        <div class="eye left-eye"></div>
-                        <div class="eye right-eye"></div>
-                    </div>
-                    <div class="mouth"></div>
-                </div>
+            <div class="engineer-avatar">
+                <div class="mech-gear"></div>
+                <div class="mech-arm"></div>
             </div>
         </div>
     </section>
 
+    <!-- ===== About Section ===== -->
     <section class="about" id="about">
         <div class="about-img">
-            <div class="ufo">
-                <div class="ufo-top"></div>
-                <div class="ufo-bottom"></div>
-                <div class="ufo-light"></div>
-            </div>
+            <canvas id="robot-arm-canvas"></canvas>
         </div>
-
         <div class="about-content">
             <h2 class="heading">About <span>Me</span></h2>
-            <h3>Cosmic Creative</h3>
-            <p>Hailing from the Andromeda galaxy, I've been studying Earth's web technologies for the past 5 light years. My mission is to bridge the gap between extraterrestrial aesthetics and human usability.</p>
+            <h3>Mechanical Engineer & Industrial Designer</h3>
+            <p>Specializing in CAD modeling, thermodynamics, and automation systems. Passionate about sustainable engineering solutions.</p>
             <div class="skills">
                 <div class="skill">
-                    <div class="skill-name">HTML</div>
+                    <div class="skill-name">AutoCAD</div>
                     <div class="skill-bar">
                         <div class="skill-per" per="95%"></div>
                     </div>
                 </div>
                 <div class="skill">
-                    <div class="skill-name">CSS</div>
+                    <div class="skill-name">SolidWorks</div>
                     <div class="skill-bar">
                         <div class="skill-per" per="90%"></div>
                     </div>
                 </div>
                 <div class="skill">
-                    <div class="skill-name">JavaScript</div>
+                    <div class="skill-name">ANSYS</div>
                     <div class="skill-bar">
                         <div class="skill-per" per="85%"></div>
                     </div>
                 </div>
                 <div class="skill">
-                    <div class="skill-name">React</div>
+                    <div class="skill-name">Python (Automation)</div>
                     <div class="skill-bar">
                         <div class="skill-per" per="80%"></div>
                     </div>
                 </div>
             </div>
-            <a href="#" class="btn">Read More</a>
         </div>
     </section>
 
-    <section class="services" id="services">
-        <h2 class="heading">My <span>Services</span></h2>
-
-        <div class="services-container">
-            <div class="services-box">
-                <i class="fas fa-code"></i>
-                <h3>Web Development</h3>
-                <p>Building websites with clean, efficient code that works across all galaxies (and browsers).</p>
-                <a href="#" class="btn">Read More</a>
+    <!-- ===== Education Section ===== -->
+    <section class="education" id="education">
+        <h2 class="heading">My <span>Education</span></h2>
+        <div class="education-container">
+            <div class="education-box">
+                <i class="fas fa-graduation-cap"></i>
+                <h3>M.Sc. Mechanical Engineering</h3>
+                <p>Stanford University (2020-2022)</p>
+                <span class="education-date">GPA: 3.8/4.0</span>
             </div>
-
-            <div class="services-box">
-                <i class="fas fa-paint-brush"></i>
-                <h3>UI/UX Design</h3>
-                <p>Creating interfaces that are intuitive for humans but inspired by cosmic aesthetics.</p>
-                <a href="#" class="btn">Read More</a>
-            </div>
-
-            <div class="services-box">
-                <i class="fas fa-rocket"></i>
-                <h3>Branding</h3>
-                <p>Developing visual identities that stand out in the crowded space of Earth's market.</p>
-                <a href="#" class="btn">Read More</a>
+            <div class="education-box">
+                <i class="fas fa-university"></i>
+                <h3>B.Eng. Industrial Automation</h3>
+                <p>ETH Zurich (2016-2020)</p>
+                <span class="education-date">Thesis: "AI in Robotics"</span>
             </div>
         </div>
     </section>
 
-    <section class="portfolio" id="portfolio">
-        <h2 class="heading">Latest <span>Projects</span></h2>
+    <!-- ===== Certifications Section ===== -->
+    <section class="certifications" id="certifications">
+        <h2 class="heading">My <span>Certifications</span></h2>
+        <div class="certifications-container">
+            <div class="certification-box">
+                <img src="https://via.placeholder.com/100x100?text=CAD" alt="CAD Certification">
+                <h3>Certified SolidWorks Expert (CSWE)</h3>
+                <p>Dassault Systèmes (2023)</p>
+            </div>
+            <div class="certification-box">
+                <img src="https://via.placeholder.com/100x100?text=ANSYS" alt="ANSYS Certification">
+                <h3>ANSYS Simulation Specialist</h3>
+                <p>ANSYS Inc. (2022)</p>
+            </div>
+            <div class="certification-box">
+                <img src="https://via.placeholder.com/100x100?text=Python" alt="Python Certification">
+                <h3>Python for Mechanical Engineers</h3>
+                <p>Coursera (2021)</p>
+            </div>
+        </div>
+    </section>
 
-        <div class="portfolio-container">
-            <div class="portfolio-box">
-                <img src="https://via.placeholder.com/600x400?text=Galaxy+Explorer" alt="">
-                <div class="portfolio-layer">
-                    <h4>Galaxy Explorer</h4>
-                    <p>Interactive 3D map of nearby star systems.</p>
+    <!-- ===== Projects Section (3D Hover Effects) ===== -->
+    <section class="projects" id="projects">
+        <h2 class="heading">Engineering <span>Projects</span></h2>
+        <div class="projects-container">
+            <div class="project-box">
+                <img src="https://via.placeholder.com/600x400?text=Robotic+Arm" alt="Robotic Arm">
+                <div class="project-layer">
+                    <h4>AI-Powered Robotic Arm</h4>
+                    <p>Designed for industrial automation with TensorFlow.</p>
                     <a href="#"><i class="fas fa-external-link-alt"></i></a>
                 </div>
             </div>
-
-            <div class="portfolio-box">
-                <img src="https://via.placeholder.com/600x400?text=Alien+Translator" alt="">
-                <div class="portfolio-layer">
-                    <h4>Alien Translator</h4>
-                    <p>Real-time translation between Earth languages and extraterrestrial dialects.</p>
-                    <a href="#"><i class="fas fa-external-link-alt"></i></a>
-                </div>
-            </div>
-
-            <div class="portfolio-box">
-                <img src="https://via.placeholder.com/600x400?text=Space+Commerce" alt="">
-                <div class="portfolio-layer">
-                    <h4>Space Commerce</h4>
-                    <p>E-commerce platform for interplanetary trade.</p>
-                    <a href="#"><i class="fas fa-external-link-alt"></i></a>
-                </div>
-            </div>
-
-            <div class="portfolio-box">
-                <img src="https://via.placeholder.com/600x400?text=Exo+Social" alt="">
-                <div class="portfolio-layer">
-                    <h4>Exo Social</h4>
-                    <p>Social network connecting beings across the universe.</p>
-                    <a href="#"><i class="fas fa-external-link-alt"></i></a>
-                </div>
-            </div>
-
-            <div class="portfolio-box">
-                <img src="https://via.placeholder.com/600x400?text=Cosmic+Weather" alt="">
-                <div class="portfolio-layer">
-                    <h4>Cosmic Weather</h4>
-                    <p>Weather app with solar flare and meteor shower predictions.</p>
-                    <a href="#"><i class="fas fa-external-link-alt"></i></a>
-                </div>
-            </div>
-
-            <div class="portfolio-box">
-                <img src="https://via.placeholder.com/600x400?text=Time+Dilation+Calc" alt="">
-                <div class="portfolio-layer">
-                    <h4>Time Dilation Calculator</h4>
-                    <p>Calculate relativistic time differences for space travel.</p>
+            <div class="project-box">
+                <img src="https://via.placeholder.com/600x400?text=Thermal+System" alt="Thermal System">
+                <div class="project-layer">
+                    <h4>Heat Exchanger Optimization</h4>
+                    <p>20% efficiency improvement using CFD.</p>
                     <a href="#"><i class="fas fa-external-link-alt"></i></a>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- ===== Contact Section ===== -->
     <section class="contact" id="contact">
         <h2 class="heading">Contact <span>Me</span></h2>
-
         <form action="#">
             <div class="input-box">
                 <input type="text" placeholder="Full Name">
-                <input type="email" placeholder="Email Address">
+                <input type="email" placeholder="Email">
             </div>
             <div class="input-box">
-                <input type="number" placeholder="Mobile Number">
-                <input type="text" placeholder="Email Subject">
+                <input type="text" placeholder="Subject">
+                <input type="tel" placeholder="Phone">
             </div>
-            <textarea name="" id="" cols="30" rows="10" placeholder="Your Message"></textarea>
-            <input type="submit" value="Send Message" class="btn">
+            <textarea placeholder="Your Message"></textarea>
+            <button type="submit" class="btn">Send Message <i class="fas fa-paper-plane"></i></button>
         </form>
     </section>
 
+    <!-- ===== Footer ===== -->
     <footer class="footer">
         <div class="footer-text">
-            <p>Copyright &copy; 2023 by AlienX | All Rights Reserved.</p>
+            <p>&copy; 2024 Mechanical Engineer Portfolio | All Rights Reserved</p>
         </div>
-
         <div class="footer-iconTop">
             <a href="#home"><i class="fas fa-arrow-up"></i></a>
         </div>
     </footer>
 
-    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <!-- ===== JavaScript ===== -->
     <script src="script.js"></script>
 </body>
 </html>
